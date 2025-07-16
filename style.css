@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+.container{
+    width: min(1280px, calc(100% - 40px));
+    margin: 0 auto;
+}
+h1, h3, h5{
+    color: #272727;
+}
+p{
+    color: rgb(39, 39, 39, .6);
+}
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 20px;
+    border: 0;
+    color: #fff;
+    background-color: #e55473;
+    border-radius: 8px;
+    text-decoration: none;
+}
+header{
+    background-color: #fceef1;
+    & .banner{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-top: 40px;
+        & .banner-left{
+            & h1{
+                font-size: 80px;
+                font-weight: 800;
+            }
+            & > *{
+                margin-bottom: 10px;
+            }
+        }
+        & .banner-right img{
+            width: 500px;
+        }
+    }
+}
+main section{
+    margin: 50px auto !important;
+    text-align: center;
+    & .section-head{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    & h3, & p{
+        margin-bottom: 20px;
+    }
+    & h3{
+        font-size: 40px;
+        font-weight: 800;
+    }
+    &.featured-flower .flowers{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: end;
+        gap: 20px;
+        & .flower{
+            & figure{
+                background-color: #f2dee7;
+                height: 45vw;
+                padding: 50px 20px 0;
+                border-radius: 400px 400px 0 0;
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 20px;
+                & img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            & h5{
+                text-decoration: underline;
+                font-size: 24px;
+                font-weight: 700;
+            }
+            &:nth-of-type(2) figure{
+                background-color: #d9eff1;
+                align-items: center;
+            }
+            &:nth-of-type(3) figure{
+                background-color: #e3ebdb;
+            }
+        }
+    }
+    &.services{
+        background-color: #f4f4f4;
+        padding: 40px 24px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        & p{
+            color: rgb(39, 39, 39, .8);
+            margin-top: 10px;
+        }
+    }
+    &.hot-deal{
+        background-color: #fef6f8;
+        padding: 40px 0;
+        & .hot-deal-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & .hot-deal-left{
+                max-width: 600px;
+                & span{
+                    color: #e55473;
+                }
+            }
+        }
+    }
+    &.instagram .photos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        & img{
+            width: 100%;
+        }
+    }
+    &.newsletter{
+        background-image: url(assets/Rectangle\ 9.png);
+        padding: 50px 30px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        & form{
+            width: min(500px, 100%);
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            & input{
+                border: 0;
+                padding: 15px 20px;
+                border-radius: 10px;
+                width: 100%;
+                outline: none;
+            }
+        }
+    }
+}
+footer{
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    & h3, & p{
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    & h3{
+        font-size: 48px;
+        font-weight: 800;
+        & span{
+            color: #e55473;
+        }
+    }
+    & p:nth-of-type(2){
+        color: rgba(255, 255, 255, .4);
+    }
+}
+@media screen and (max-width: 992px){
+    header .banner, main section.hot-deal .hot-deal-container{
+        flex-direction: column;
+        & img{
+            width: 100%;
+        }
+    }
+}
+@media screen and (min-width: 577px) and (max-width: 991px){
+    main section.instagram .photos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 575px){
+    header .banner .banner-left h1{
+        font-size: 60px;
+    }
+    main section{
+        &.instagram .photos, &.featured-flower .flowers, &.services{
+            grid-template-columns: 1fr;
+        }
+        &.featured-flower .flowers .flower figure{
+            height: 100%;
+        }
+        &.newsletter form{
+            flex-direction: column;
+        }
+    }
+}
